@@ -186,3 +186,6 @@ fabric.properties
 
 # ignore env files
 *.env
+
+# scribbles of a mad programmer
+TODO.txt
