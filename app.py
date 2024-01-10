@@ -10,15 +10,18 @@ YOUTUBE_DIR = "youtube"
 
 @st.cache_resource
 def load_whisper(model_name: str) -> WhisperTranscriber:
+    """Load the whisper model and cache it"""
     return WhisperTranscriber(model_name)
 
 
 @st.cache_resource
 def load_gpt(model_name: str, openai_key: str) -> ChatSummarizer:
+    """Load the gpt model and cache it"""
     return ChatSummarizer(openai_key, model_name)
 
 
 def is_youtube_link(link: str) -> bool:
+    """Check if the link is a youtube url"""
     return link.startswith("https://www.youtube.com/watch?v=")
 
 
