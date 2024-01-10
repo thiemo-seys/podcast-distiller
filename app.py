@@ -33,7 +33,9 @@ with st.sidebar:
     gpt_model = st.selectbox("Summarizer Model", gpt_options, index=8)
     openai_api_key = st.text_input("OpenAI API Key")
 
-    audio_input_path = st.text_input("Or enter a path to an audio file or youtube video")
+    audio_input_path = st.text_input(
+        "Or enter a path to an audio file or youtube video"
+    )
 
     if audio_input_path:
         if is_youtube_link(audio_input_path):

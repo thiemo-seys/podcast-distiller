@@ -4,6 +4,7 @@ from pathlib import Path
 
 import yaml
 
+
 @dataclass
 class PDConfig:
     openai_api_key: str = os.environ.get("OPENAI_API_KEY")

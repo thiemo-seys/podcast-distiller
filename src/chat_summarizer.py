@@ -7,7 +7,13 @@ DEFAULT_SUMMARY_CONTEXT = """
 
 
 class ChatSummarizer:
-    def __init__(self, api_key: str, model: str, temperature: float = 0.5, context: str = DEFAULT_SUMMARY_CONTEXT):
+    def __init__(
+        self,
+        api_key: str,
+        model: str,
+        temperature: float = 0.5,
+        context: str = DEFAULT_SUMMARY_CONTEXT,
+    ):
         self.client = OpenAI(api_key=api_key)
         self.context = context
         self.temperature = temperature
@@ -35,13 +41,13 @@ class ChatSummarizer:
     def summarize(self, prompt: str):
         messages = self._generate_messages(prompt)
 
-        response = self.client.chat.completions.create(model=self.model,
-                                                       messages=messages,
-                                                       temperature=self.temperature)
+        response = self.client.chat.completions.create(
+            model=self.model, messages=messages, temperature=self.temperature
+        )
         return response.choices[0].message.content
 
     def _generate_messages(self, prompt: str):
         return [
             {"role": "user", "content": prompt},
-            {"role": "system", "content": self.context}
+            {"role": "system", "content": self.context},
         ]
