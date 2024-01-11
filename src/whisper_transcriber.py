@@ -12,11 +12,14 @@ class WhisperTranscriber:
 
     @staticmethod
     def list_models() -> list[str]:
+        """List all available models"""
         return whisper.available_models()
 
     @staticmethod
     def get_model(model_name: str) -> whisper.Whisper:
+        """Load the whisper model"""
         return whisper.load_model(model_name)
 
     def transcribe(self, audio: Union[str, np.ndarray]) -> str:
+        """Transcribe the audio"""
         return self.model.transcribe(audio=audio)

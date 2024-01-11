@@ -7,6 +7,8 @@ import yaml
 
 @dataclass
 class PDConfig:
+    """Config for the program"""
+
     openai_api_key: str = os.environ.get("OPENAI_API_KEY")
     wisper_model: str = os.environ.get("WISPER_MODEL")
 
