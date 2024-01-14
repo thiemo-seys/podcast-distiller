@@ -6,8 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"  # Adjust the port mapping as needed
+      - "8080:8080"
     volumes:
-      - ./path/to/your/project:/app  # Mount the local project directory into the container
-    environment:
-      - ENV_VARIABLE=value  # Add any environment variables if needed
+      - .:/app

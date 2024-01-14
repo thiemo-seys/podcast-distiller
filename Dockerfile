@@ -10,11 +10,5 @@ COPY requirements.txt /app/
 # Install any dependencies specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the entire project into the container at /app
-COPY . /app/
-
 # Expose any necessary ports
 # EXPOSE 8080
-
-# Specify the command to run on container start
-ENTRYPOINT ["python", "your_main_script.py"]
