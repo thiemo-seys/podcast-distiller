@@ -35,7 +35,6 @@ networkx==3.2.1
 numba==0.58.1
 numpy==1.26.3
 openai==1.7.1
-openai-whisper==20231117
 packaging==23.2
 pandas==2.1.4
 pillow==10.2.0
@@ -75,3 +74,6 @@ tzlocal==5.2
 urllib3==2.1.0
 validators==0.22.0
 zipp==3.17.0
+
+# Wheel files
+wheels/openai_whisper-20231117-py3-none-any.whl
