@@ -25,7 +25,7 @@ jobs:
       - name: code review
         run: find . -name '*.py' -print -exec pylint {} \;
 
-# FIXME: disabled for now to test the pip caching
+# FIXME: disabled for now to test the pip caching, OK this was it
 #      - name: Analyse code
 #        run: |
 #              for file in */*.py; do pylint "$file" --fail-under=7.0; done
