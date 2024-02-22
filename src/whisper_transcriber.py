@@ -4,8 +4,6 @@ import numpy as np
 import whisper
 
 
-# TODO: this would probably be better with dependency injection
-#  i.e passing an instance of the model to the class instead
 class WhisperTranscriber:
     def __init__(self, model: str):
         self.model = WhisperTranscriber.get_model(model)
