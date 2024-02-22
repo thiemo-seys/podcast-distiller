@@ -6,7 +6,6 @@ from src.chat_summarizer import ChatSummarizer
 
 
 def setup_parser() -> argparse.ArgumentParser:
-    """Set up the command line parser."""
     parser = argparse.ArgumentParser(
         description="Converts mp3 to text and summarizes the text."
     )
@@ -41,7 +40,6 @@ def setup_parser() -> argparse.ArgumentParser:
 
 
 def main() -> None:
-    """Execute the CLI program"""
     parser = setup_parser()
     args = parser.parse_args()
 
