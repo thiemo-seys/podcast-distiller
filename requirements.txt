@@ -39,7 +39,7 @@ networkx==3.2.1
 numba==0.58.1
 numpy==1.26.3
 openai==1.7.1
-openai-whisper @ file:wheels/openai_whisper-20231117-py3-none-any.whl#sha256=c39e7ad838771f45b421d593b5624ea578873322b0bca697dd96b0b7a677eab4
+openai-whisper==20231117
 packaging==23.2
 pandas==2.1.4
 pathspec==0.12.1
