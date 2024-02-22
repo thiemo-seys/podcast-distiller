@@ -10,6 +10,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up Python for black
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: check formatting
+        run: |
+          pip install black
+          black --check .
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
