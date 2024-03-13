@@ -1,11 +1,13 @@
 services:
   postgres:
     image: postgres:16
-    volumes:
-      - postgres:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+      DB_NAME: podcast_distiller
+      DB_HOST: postgres
+    volumes:
+      - postgres:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 

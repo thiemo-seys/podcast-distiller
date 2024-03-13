@@ -17,7 +17,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -29,10 +28,18 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Fixme: this is a temporary hack until https://github.com/jazzband/django-debug-toolbar/pull/1887 is released a new version of django debug toolbar.
+# This is a temporary fix to make the debug toolbar work with docker
+if DEBUG:
+    # `debug` is only True in templates if the vistor IP is in INTERNAL_IPS.
+    INTERNAL_IPS = type("c", (), {"__contains__": lambda *a: True})()
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    "debug_toolbar",
+    "polls.apps.PollsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -42,6 +49,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -56,7 +64,7 @@ ROOT_URLCONF = "app.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -79,9 +87,9 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": os.environ.get("DB_NAME", "podcast_distiller"),
-        "USER": os.environ.get("POSTGRES_USER", "podcast_distiller"),
-        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "podcast_distiller"),
-        "HOST": "postgres",
+        "USER": os.environ.get("POSTGRES_USER", "postgres"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "postgres"),
+        "HOST": os.environ.get("DB_HOST", "postgres"),
         "PORT": "5432",
     }
 }
