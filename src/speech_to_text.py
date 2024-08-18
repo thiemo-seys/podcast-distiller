@@ -20,7 +20,7 @@ def transcribe(model: whisper.Whisper, audio: Union[str, np.ndarray]) -> str:
 
 class Transcriber:
     def __init__(self, model: whisper.Whisper = None):
-        self.model = model
+        self._model = model
 
     def transcribe(self, audio: Union[str, np.ndarray]) -> str:
-        return transcribe(self.model, audio)
+        return transcribe(self._model, audio)
