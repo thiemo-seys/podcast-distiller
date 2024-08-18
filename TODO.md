@@ -110,3 +110,16 @@ This document outlines the tasks and features that need to be completed in this 
   - **Status:** Not Started
   - **Related Issues:** [PR/Issue](https://github.com/openai/whisper/pull/2070)
 
+- **Reasearch optimised whisper inference**
+  - **Description:** Improve whisper speed
+  - **Priority:** Medium
+  - **Assigned To:**
+  - **Status:** Not Started
+  - **Related Issues:** [Whisper cpp](https://github.com/ggerganov/whisper.cpp) [WhisperS2T](https://github.com/shashikg/WhisperS2T) [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM/tree/main/examples/whisper)
+
+- **Per speaker transcription**
+  - **Description:** Who says what
+  - **Priority:** Low
+  - **Assigned To:**
+  - **Status:** Not Started
+  - **Related Issues:** [Example](https://github.com/pyannote/pyannote-audio)
