@@ -186,3 +186,6 @@ fabric.properties
 
 # ignore env files
 *.env
+
+# ignore files in audio data dir
+data/audio
